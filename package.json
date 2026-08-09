@@ -1,6 +1,6 @@
 {
   "name": "@moonz-fun/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only TypeScript and JavaScript SDK for the Moonz Solana launchpad protocol",
   "license": "MIT",
   "sideEffects": false,
