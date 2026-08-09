@@ -1,0 +1,63 @@
+{
+  "name": "@moonz-fun/sdk",
+  "version": "0.1.0",
+  "description": "Read-only TypeScript and JavaScript SDK for the Moonz Solana launchpad protocol",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "idl",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./idl": "./idl/moonz_launchpad.json"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "0.32.1",
+    "@solana/web3.js": "1.98.4",
+    "bs58": "6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "tsup": "8.5.0",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {},
+  "homepage": "https://moonz.fun",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/detox267/moonz-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/detox267/moonz-sdk/issues"
+  },
+  "keywords": [
+    "moonz",
+    "solana",
+    "sdk",
+    "launchpad",
+    "token",
+    "web3",
+    "blockchain",
+    "rpc",
+    "anchor",
+    "trading",
+    "bot"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
