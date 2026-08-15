@@ -138,6 +138,65 @@ export interface MoonzSwitchState {
   swapExecuted: boolean;
 }
 
+export type MoonzMarketType =
+  | "BONDING"
+  | "AMM"
+  | "UNAVAILABLE";
+
+export type MoonzMarketPriceSource =
+  | "VIRTUAL_CURVE"
+  | "AMM_RESERVES"
+  | "UNAVAILABLE";
+
+export interface MoonzMarketData {
+  mint: string;
+
+  phase: MoonzPhase;
+  phaseCode: number;
+
+  market: MoonzMarketType;
+  priceSource: MoonzMarketPriceSource;
+
+  tradable: boolean;
+
+  quoteAsset: MoonzQuoteAsset;
+  quoteAssetCode: number;
+
+  /*
+   * Price per whole token in quoteAsset.
+   */
+  priceQuote: string | null;
+
+  /*
+   * Current total supply multiplied by priceQuote.
+   * Denominated in quoteAsset.
+   */
+  marketCapQuote: string | null;
+
+  totalSupply: MoonzAmount;
+  bondingProgress: number;
+
+  /*
+   * BONDING only.
+   */
+  virtualQuoteReserve:
+    MoonzAmount | null;
+
+  virtualTokenReserve:
+    MoonzAmount | null;
+
+  /*
+   * AMM_LIVE only.
+   */
+  tokenReserve:
+    MoonzAmount | null;
+
+  quoteReserve:
+    MoonzAmount | null;
+
+  integrityAll: boolean;
+}
+
 export interface MoonzIntegrity {
   programOwner: boolean;
 

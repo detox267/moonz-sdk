@@ -29,6 +29,10 @@ import {
 } from "./metadata";
 
 import {
+  marketDataFromToken
+} from "./market";
+
+import {
   parseMoonzLogs
 } from "./events";
 
@@ -45,6 +49,7 @@ import type {
   MoonzEventContext,
   MoonzIntegrity,
   MoonzLaunchState,
+  MoonzMarketData,
   MoonzMetadataInfo,
   MoonzPhase,
   MoonzQuoteAsset,
@@ -2197,5 +2202,22 @@ export class MoonzSDK {
         MOONZ_PROGRAM_ID
           .toBase58()
     };
+  }
+
+  public async getMarketData(
+    mint: MoonzAddress
+  ): Promise<MoonzMarketData | null> {
+    const token =
+      await this.getToken(
+        mint
+      );
+
+    if (!token) {
+      return null;
+    }
+
+    return marketDataFromToken(
+      token
+    );
   }
 }

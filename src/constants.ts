@@ -32,3 +32,18 @@ export const MOONZ_QUOTE_ASSET = {
   SOL: 0,
   USDC: 1
 } as const;
+
+/*
+ * Immutable Moonz mainnet bonding curve values.
+ */
+export const MOONZ_SOL_DECIMALS = 9;
+export const MOONZ_TOKEN_DECIMALS = 6;
+
+export const MOONZ_VIRTUAL_SOL_LAMPORTS =
+  "117000000000";
+
+export const MOONZ_VIRTUAL_TOKEN_RAW =
+  "760000000000000";
+
+export const MOONZ_MARKET_DECIMAL_PRECISION =
+  24;
